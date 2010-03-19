@@ -1,0 +1,41 @@
+#ifndef STATEMANAGER_H
+#define STATEMANAGER_H
+
+#include <vector>
+#include "gamestate.h"
+
+using namespace std;
+
+/*! StateManager */
+class StateManager {
+ public:
+  //! Constructor
+  StateManager();
+
+  //! Remove the current state from the stack and add a new state to the end of the stack.
+  /*! 
+    \param state GameState obj.
+    \sa PushState(), PopState()
+   */
+  void ChangeState(GameState* state); 
+  //! Pause the current state and go to a new state.
+  /*! 
+    \param state state to put on stack
+    \sa ChangeState(), PopState()
+   */
+  void PushState(GameState* state); 
+  //! Leave current state and go to previous state.
+  void PopState(); 
+  //! Remove current state from states vector.
+  void Clear();
+  //! Return pointer to states vector
+  vector<GameState*>* ReturnStates() {
+    return states;
+  }
+
+ private:
+  //! The stack of states.
+  vector<GameState*>* states;
+};
+
+#endif

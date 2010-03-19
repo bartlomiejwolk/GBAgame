@@ -1,0 +1,127 @@
+;; -*- mode: emacs-lisp; coding: emacs-mule; -*-
+;; --------------------------------------------------------------------------
+;; Desktop File for Emacs
+;; --------------------------------------------------------------------------
+;; Created Tue Feb 23 21:24:30 2010
+;; Desktop file format version 206
+;; Emacs version 22.2.1
+
+;; Global section:
+(setq desktop-missing-file-warning nil)
+(setq tags-file-name nil)
+(setq tags-table-list nil)
+(setq search-ring nil)
+(setq regexp-search-ring nil)
+(setq register-alist nil)
+
+;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 206
+  "/home/moonflow/devkitpro/crcproj/Makefile"
+  "Makefile"
+  'makefile-gmake-mode
+  nil
+  1735
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode . t) (buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/moonflow/devkitpro/crcproj/include/gamestate.h"
+  "gamestate.h"
+  'c-mode
+  '(abbrev-mode)
+  417
+  '(376 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . mule-utf-8)))
+
+(desktop-create-buffer 206
+  "/home/moonflow/devkitpro/crcproj/include/statemanager.h"
+  "statemanager.h"
+  'c-mode
+  '(abbrev-mode)
+  789
+  '(777 t)
+  nil
+  nil
+  '((buffer-file-coding-system . mule-utf-8)))
+
+(desktop-create-buffer 206
+  "/home/moonflow/devkitpro/crcproj/source/statemanager.cpp"
+  "statemanager.cpp"
+  'c++-mode
+  '(abbrev-mode)
+  119
+  '(119 t)
+  nil
+  nil
+  '((buffer-file-coding-system . mule-utf-8)))
+
+(desktop-create-buffer 206
+  "/home/moonflow/devkitpro/crcproj/include/gameengine.h"
+  "gameengine.h"
+  'c-mode
+  '(abbrev-mode)
+  223
+  '(234 t)
+  nil
+  nil
+  '((buffer-file-coding-system . mule-utf-8)))
+
+(desktop-create-buffer 206
+  "/home/moonflow/devkitpro/crcproj/source/main.cpp"
+  "main.cpp"
+  'c++-mode
+  '(abbrev-mode)
+  202
+  '(280 t)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/moonflow/devkitpro/crcproj/source/gameengine.cpp"
+  "gameengine.cpp"
+  'c++-mode
+  '(abbrev-mode)
+  415
+  '(354 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . mule-utf-8) (overwrite-mode)))
+
+(desktop-create-buffer 206
+  "/home/moonflow/devkitpro/crcproj/source/gamestate.cpp"
+  "gamestate.cpp"
+  'c++-mode
+  '(abbrev-mode)
+  192
+  '(168 t)
+  nil
+  nil
+  '((buffer-file-coding-system . mule-utf-8)))
+
+(desktop-create-buffer 206
+  "/home/moonflow/devkitpro/crcproj/names.txt"
+  "names.txt"
+  'text-mode
+  nil
+  34
+  '(104 t)
+  nil
+  nil
+  '((buffer-file-coding-system . mule-utf-8)))
+
+(desktop-create-buffer 206
+  nil
+  "include"
+  'dired-mode
+  nil
+  478
+  '(nil nil)
+  t
+  '("/home/moonflow/devkitpro/crcproj/include/")
+  nil)
+
