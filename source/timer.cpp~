@@ -1,0 +1,6 @@
+Timer::Timer(): curFrame(0) {
+}
+
+Timer::~Timer(){
+}
+

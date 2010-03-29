@@ -1,9 +1,16 @@
 #ifndef GAMESTATE_H
 #define GAMESTATE_H
 
-/** GameState */
-class GameState {
+/** IGameState */
+class IGameState {
+
+private:
+
 public:
+  //! Constructor
+  IGameState();
+  //! Destructor
+  virtual  ~IGameState();
   virtual void Init() = 0 ;
   virtual void CleanUp() = 0; // (?)
   /// Handle user input.
@@ -11,12 +18,10 @@ public:
   virtual void Update() = 0;
   virtual void Display() = 0; // (?)
 
-
-private:
 };
 
-/*! Class derivated from GameState. */
-class TitleScreen: public GameState {
+/*! Class derivated from IGameState. */
+class TitleScreen: public IGameState {
  public:
   //! Initialize state
   void Init();
