@@ -13,15 +13,11 @@ int main() {
   TitleScreen titleScreen;
   StateManager stateManager;
 
-  // --- Testing Timer class ---
-  Timer timer;
-  // ^^^ Testing Timer class ^^^
-  
   game.Init();
   // Use StateManager obj. for changing game state to TitleScreen.
   stateManager.ChangeState(&titleScreen);
 
-  // --- Testing Timer class ---
+  // --- Testing Text::xte_write_delayed() class ---
   REG_DISPCNT= DCNT_MODE0 | DCNT_BG0;
   
   tte_init_se(
@@ -39,18 +35,19 @@ int main() {
   char buffer[50];
   int irnd = rand();
   sprintf(buffer,"\n%d",irnd);
+
+  Text text(buffer);
   
   
-  // ^^^ Testing Timer class ^^^
+  // --- Testing Text::xte_write_delayed() class ^^^
 
   while (1) {
     vid_vsync();
     
-    // --- Testing Timer class ---
-    if (timer.correct_frame(100))
-    tte_write(buffer);
-
-    // ^^^ Testing Timer class ^^^
+  // --- Testing Text::xte_write_delayed() class ---
+text.xte_write_delayed(10);
+    
+  // --- Testing Text::xte_write_delayed() class ^^
 
     game.HandleEvents(&stateManager);
     game.Update();

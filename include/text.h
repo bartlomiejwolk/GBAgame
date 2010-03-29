@@ -2,6 +2,7 @@
 #define TEXT_H
 
 #include <tonc.h>
+#include "timer.h"
 
 //! Additional functionality for TTE.
 class Text {
@@ -22,5 +23,6 @@ class Text {
   //! Is set to 1 by instruction inside switch after last char is displayed.
   int textEnd;
   int curFrame;
+  Timer timer;
 };
 #endif

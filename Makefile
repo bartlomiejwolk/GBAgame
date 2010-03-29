@@ -51,7 +51,7 @@ $(CPPOBJS) : %.o : %.cpp
 	$(CC) -c $< $(CFLAGS) -o $@
 
 clean :
-	@rm -fv source/*.o
+#	@rm -fv source/*.o
 	@rm -fv *.elf
 	@rm -fv *.gba
 

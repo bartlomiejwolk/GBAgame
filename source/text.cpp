@@ -11,14 +11,10 @@ Text::~Text(){
 
 }
 
-int Text::xte_write_delayed(const int intervall){
+int Text::xte_write_delayed(const int interval){
   
-  curFrame++;
-  if (curFrame > intervall)
-    curFrame = 1;
-
-  if (curFrame != intervall)
-    return 1; // value has no meaning
+  // Display text only after so many frames as given in the arg.
+  if(timer.correct_frame(interval)){
   
   str++;
   ch = *str; 
@@ -77,4 +73,6 @@ int Text::xte_write_delayed(const int intervall){
   }
   
   return 1; // value has no meaning
+    }
+    return 0;
 }
