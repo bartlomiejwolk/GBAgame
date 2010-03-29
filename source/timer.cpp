@@ -1,3 +1,5 @@
+#include "timer.h"
+
 Timer::Timer(): curFrame(0) {
 }
 

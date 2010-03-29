@@ -1,20 +1,57 @@
 #include <tonc.h>
+#include <stdlib.h>
+
 #include "gameengine.h"
 #include "gamestate.h"
 #include "statemanager.h"
+#include "text.h"
+#include "timer.h"
 
 int main() {
 
   GameEngine game;
   TitleScreen titleScreen;
   StateManager stateManager;
+
+  // --- Testing Timer class ---
+  Timer timer;
+  // ^^^ Testing Timer class ^^^
   
   game.Init();
   // Use StateManager obj. for changing game state to TitleScreen.
   stateManager.ChangeState(&titleScreen);
 
+  // --- Testing Timer class ---
+  REG_DISPCNT= DCNT_MODE0 | DCNT_BG0;
+  
+  tte_init_se(
+	      0,                      // Background number (BG 0)
+	      BG_CBB(0)|BG_SBB(31)|BG_REG_32x64,   // BG control (for REG_BGxCNT)
+	      0,                      // Tile offset (special cattr)
+	      CLR_YELLOW,             // Ink color
+	      14,                     // BitUnpack offset (on-pixel = 15)
+	      NULL,                   // Default font (sys8) 
+	      NULL);                  // Default renderer (se_drawg_s)
+  
+  pal_bg_bank[0][1]= CLR_YELLOW;
+  
+  srand(4454442);
+  char buffer[50];
+  int irnd = rand();
+  sprintf(buffer,"\n%d",irnd);
+  
+  
+  // ^^^ Testing Timer class ^^^
+
   while (1) {
     vid_vsync();
+    
+    // --- Testing Timer class ---
+    if (timer.correct_frame(100))
+    tte_write(buffer);
+
+    // ^^^ Testing Timer class ^^^
+
     game.HandleEvents(&stateManager);
     game.Update();
     game.Draw();
