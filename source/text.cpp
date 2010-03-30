@@ -11,11 +11,14 @@ Text::~Text(){
 
 }
 
-int Text::xte_write_delayed(const int interval){
-  
-  // Display text only after so many frames as given in the arg.
-  if(timer.correct_frame(interval)){
-  
+void Text::xte_write_delayed(const int interval){
+    // Display text only after so many frames as given in the arg.
+  if(timer.correct_frame(interval))
+    // Write another letter
+    xte_writeby_letter();
+}
+
+void Text::xte_writeby_letter(){
   str++;
   ch = *str; 
   // Everything within switch is to interpret and display text on screen. When all text given by arg. is displayed, there is no need to go inside this switch again.
@@ -71,8 +74,4 @@ int Text::xte_write_delayed(const int interval){
 	tc->cursorX += charW;
       }
   }
-  
-  return 1; // value has no meaning
-    }
-    return 0;
 }
