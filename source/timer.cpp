@@ -6,7 +6,6 @@ Timer::Timer(): curFrame(0) {
 Timer::~Timer(){
 }
 
-//! Timer ticks in interval passed by arg.
 int Timer::correct_frame(int frameNum) {
   curFrame++;
 

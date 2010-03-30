@@ -33,7 +33,7 @@ CFLAGS 	:= $(INCLUDE) $(LIBTONC) $(LIBS) $(DEBUG) -Wall -mthumb -mthumb-interwor
 LDFLAGS	:= $(LIBPATHS) $(LIBS) $(DEBUG) -Wall -specs=gba.specs -mthumb -mthumb-interwork 
 
 # --- Build steps ---
-all : clean build 
+all : build 
 
 build : $(PROJ).$(EXT)
 
@@ -51,7 +51,7 @@ $(CPPOBJS) : %.o : %.cpp
 	$(CC) -c $< $(CFLAGS) -o $@
 
 clean :
-#	@rm -fv source/*.o
+	@rm -fv source/*.o
 	@rm -fv *.elf
 	@rm -fv *.gba
 

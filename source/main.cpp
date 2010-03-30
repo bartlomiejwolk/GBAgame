@@ -13,6 +13,10 @@ int main() {
   TitleScreen titleScreen;
   StateManager stateManager;
 
+  // --- Testing update_seed() ---
+  Timer timer;
+  // --- Test. update_seed() ---
+
   game.Init();
   // Use StateManager obj. for changing game state to TitleScreen.
   stateManager.ChangeState(&titleScreen);
@@ -31,28 +35,33 @@ int main() {
   
   pal_bg_bank[0][1]= CLR_YELLOW;
   
-  srand(4454442);
-  char buffer[50];
-  int irnd = rand();
-  sprintf(buffer,"\n%d",irnd);
-
+  int irnd, i = 0;
+  char buffer[50]; 
   Text text(buffer);
-  
+
+  // game init (delete after use)
+  srand(83673250); 
   
   // --- Testing Text::xte_write_delayed() class ^^^
 
   while (1) {
     vid_vsync();
-    
-  // --- Testing Text::xte_write_delayed() class ---
-text.xte_write_delayed(10);
-    
-  // --- Testing Text::xte_write_delayed() class ^^
+    key_poll();
+    game.update_seed();
 
-    game.HandleEvents(&stateManager);
-    game.Update();
-    game.Draw();
+    // --- Testing update_seed() ---
+
+	irnd = rand();	
+	sprintf(buffer,"\n%d",irnd);
+
+	if (timer.correct_frame(20))
+	  tte_write(buffer);
   }
+      // ^^^ Testing update_seed() ^^^
+      
+      game.HandleEvents(&stateManager);
+      game.Update();
+      game.Draw();
 
   return 0;
 }
