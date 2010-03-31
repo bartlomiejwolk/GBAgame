@@ -1,10 +1,13 @@
 #ifndef TIMER_H
 #define TIMER_H
 
+#include <stdlib.h>
+
 //!
 class Timer {
  public:
   Timer();
+  Timer(int, int, int, int, int);
   ~Timer();
   //! Timer ticks (return 1) after interval passed by arg.
   int correct_frame(int frameNum);
@@ -17,13 +20,20 @@ class Timer {
     \param g2_end
     \param g1_prob Probability that g1 will be used rather than g2.
    */
-  int random_frame(int g1_beg, int g1_end, int g2_beg, int g2_end, int g1_prob);
+  int random_frame();
 
  private:
   //! Holds frames (or rather num. of how many times this method correct_frame() was executed).
   int curFrame;
   //! Holds frames (or rather num. of how many times this method random_frame() was executed).
-  int curFrame2;
+  int frame_curr;
+  //! active == 1 means that there shoulnd't be drawn another frame_value because the method is waiting to return 1 at previous frame_value.
+  int active;
+    int frame_value;
+    int g1_range;
+  int g2_range;
+  int generator;
+  int _g1_min, _g1_max, _g2_min, _g2_max, _g1_prob;
 };
 
 #endif

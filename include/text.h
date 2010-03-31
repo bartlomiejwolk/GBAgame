@@ -8,6 +8,7 @@
 class Text {
  public:
   Text(const char* text);
+  Text(const char* text, int, int, int, int, int);
   ~Text();
   //! Write characters one by one. Text to be written on screen must be given by class constructor. This method must be executed at least as many times as many letter is to display.
   /*
@@ -17,7 +18,7 @@ class Text {
   void xte_write_delayed(const int intervall);
   //! Write text one character in each frame.
   void xte_writeby_letter();
-
+  void xte_writeby_human();
 
  private:
   char *str; 

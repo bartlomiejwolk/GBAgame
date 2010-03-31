@@ -4,7 +4,12 @@
 extern "C" uint utf8_decode_char(const char *ptr, char **endptr);
 
 Text::Text(const char* text): str((char*)text), tc(tte_get_context()), textEnd(0), curFrame(0){ 
-    
+  
+}
+
+// Second constructor (overloaded)
+Text::Text(const char* text, int g1_min, int g1_max, int g2_min, int g2_max, int g1_prob): str((char*)text), tc(tte_get_context()), textEnd(0), curFrame(0), timer(g1_min, g1_max, g2_min, g2_max, g1_prob){
+
 }
 
 Text::~Text(){
@@ -74,4 +79,9 @@ void Text::xte_writeby_letter(){
 	tc->cursorX += charW;
       }
   }
+}
+
+void Text::xte_writeby_human(){
+  if (timer.random_frame())
+    xte_writeby_letter();
 }

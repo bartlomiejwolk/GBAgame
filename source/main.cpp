@@ -32,11 +32,15 @@ int main() {
   
   pal_bg_bank[0][1]= CLR_YELLOW;
   // ^^^ Move to GameEngine::init()
+
+  Text text("\nSome text to display, written by human.",4,8,20,21,50);
   
   while (1) {
     vid_vsync();
     key_poll();
     game.update_seed();
+
+    text.xte_writeby_human();
 
     game.HandleEvents(&stateManager);
     game.Update();
@@ -56,7 +60,7 @@ Ver. 0.0.7
 Ver. 0.0.6
 > Revert public: and private: accessors order
 > Add constructors without args to each base class
-
+pp
 Ver. 0.0.5
 > StateManager::ChangeState works now.
 >.. Remove StateManager::ReturnStates() preserving it's functionality
