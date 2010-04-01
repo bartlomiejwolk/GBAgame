@@ -33,7 +33,7 @@ int main() {
   pal_bg_bank[0][1]= CLR_YELLOW;
   // ^^^ Move to GameEngine::init()
 
-  Text text("\nSome text to display, written by human.",4,8,20,21,50);
+  Text text("\nSome text to display, written by human.",8,16,20,21,80);
   
   while (1) {
     vid_vsync();

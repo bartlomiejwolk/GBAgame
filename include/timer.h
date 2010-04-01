@@ -29,11 +29,16 @@ class Timer {
   int frame_curr;
   //! active == 1 means that there shoulnd't be drawn another frame_value because the method is waiting to return 1 at previous frame_value.
   int active;
-    int frame_value;
-    int g1_range;
+  int _g1_min;
+  int _g1_max;
+  int _g2_min;
+  int _g2_max;
+  int _g1_prob;
+  int frame_value;
+  int g1_range;
   int g2_range;
   int generator;
-  int _g1_min, _g1_max, _g2_min, _g2_max, _g1_prob;
+
 };
 
 #endif

@@ -27,19 +27,19 @@ int Timer::random_frame(){
  
   // draw another frame?
   if (!active){
-
-  // Draw g1 or g2
-  generator = rand() % 100 + 1;
-  
-  // if g1
-  if (generator <= _g1_prob)
-  // Draw frame from g1
-    frame_value = rand() % (_g1_min+1) + g1_range;
-  else
-    // Draw frame from g2
-    frame_value = rand() % (_g2_min+1) + g2_range;
-
-  active = 1;
+    
+    // Draw g1 or g2
+    generator = rand() % 100 + 1;
+    
+    // if g1
+    if (generator <= _g1_prob)
+      // Draw frame from g1
+      frame_value = rand() % (g1_range + 1) + _g1_min;
+    else
+      // Draw frame from g2
+      frame_value = rand() % (g2_range + 1) + _g2_min;
+    
+    active = 1;
   }
   
   // Return true when it's time
@@ -48,6 +48,6 @@ int Timer::random_frame(){
     frame_curr = 0;
     return true;
   }
-
+  
   return false;
 }

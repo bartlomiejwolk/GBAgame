@@ -1,7 +1,6 @@
 *.o
-*.gba
-diagrams/*
-html/*
-rtf/*
-latex/*
 .emacs.desktop.lock
+docs/*
+*.~
+#*#
+#*
