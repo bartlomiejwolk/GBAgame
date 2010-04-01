@@ -6,6 +6,7 @@
 #include "statemanager.h"
 #include "text.h"
 #include "timer.h"
+#include "titlescreen.h"
 
 int main() {
 
@@ -33,7 +34,8 @@ int main() {
   pal_bg_bank[0][1]= CLR_YELLOW;
   // ^^^ Move to GameEngine::init()
 
-  Text text("\nSome text to display, written by human.",8,16,20,21,80);
+  Timer timer(8,10,11,20,30);
+  Text text("\nSome text to display, written by human.", &timer);
   
   while (1) {
     vid_vsync();

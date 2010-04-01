@@ -15,12 +15,12 @@ class GameEngine {
   // --- update_seed() ---
 
   //! Store amount of frames that have passed from the beginning of the game. Used in update_seed().
-  uint _frame_curr;
+  uint _frameCurr;
   // these two were moved from public:
   //! Value that is currently used for seeding srand()
-  int _seed_curr;
+  int _seedCurr;
   //! Previously used value for seeding srand()
-  int _seed_prev;
+  int _seedPrev;
 
  public:
   //! Constructor

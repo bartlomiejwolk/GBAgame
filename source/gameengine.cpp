@@ -6,7 +6,7 @@
 
 using namespace std;
 
-GameEngine::GameEngine(): _seed_curr(736254) {
+GameEngine::GameEngine(): _seedCurr(736254) {
 
 }
 
@@ -35,22 +35,22 @@ void GameEngine::Draw() {
 }
 
 void GameEngine::update_seed(){
-  _frame_curr++;
+  _frameCurr++;
  
-  if (_frame_curr == 65535) // It's the safe value. I'm not sure if 2^32 (4294967296) wouldn't make overflow.
-     _frame_curr = 0;
+  if (_frameCurr == 65535) // It's the safe value. I'm not sure if 2^32 (4294967296) wouldn't make overflow.
+     _frameCurr = 0;
 
   // Update seed only when any key is pressed.
   if (key_hit(KEY_ANY)) {
-    _seed_prev = _seed_curr;
-    _seed_curr = _frame_curr;
+    _seedPrev = _seedCurr;
+    _seedCurr = _frameCurr;
   }
   // When no button is pressed, the previous frame will be always as current.
   else
-    _seed_prev = _seed_curr;
+    _seedPrev = _seedCurr;
 
   // Update seed using srand()
-  if (_seed_curr != _seed_prev)
-    srand(_seed_curr);
+  if (_seedCurr != _seedPrev)
+    srand(_seedCurr);
 }
 

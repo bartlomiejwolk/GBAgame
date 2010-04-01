@@ -3,13 +3,13 @@
 // forward declaration
 extern "C" uint utf8_decode_char(const char *ptr, char **endptr);
 
-Text::Text(const char* text): str((char*)text), tc(tte_get_context()), textEnd(0), curFrame(0){ 
+Text::Text(const char* text): str((char*)text), tc(tte_get_context()), _textEnd(0), _curFrame(0){ 
   
 }
 
 // Second constructor (overloaded)
-Text::Text(const char* text, int g1_min, int g1_max, int g2_min, int g2_max, int g1_prob): str((char*)text), tc(tte_get_context()), textEnd(0), curFrame(0), timer(g1_min, g1_max, g2_min, g2_max, g1_prob){
-
+Text::Text(const char* text, Timer* timer): str((char*)text), tc(tte_get_context()), _textEnd(0), _curFrame(0){
+  _timer = timer;
 }
 
 Text::~Text(){
@@ -18,7 +18,7 @@ Text::~Text(){
 
 void Text::xte_write_delayed(const int interval){
     // Display text only after so many frames as given in the arg.
-  if(timer.frame(interval))
+  if(_timer->frame(interval))
     // Write another letter
     xte_writeby_letter();
 }
@@ -27,7 +27,7 @@ void Text::xte_writeby_letter(){
   str++;
   ch = *str; 
   // Everything within switch is to interpret and display text on screen. When all text given by arg. is displayed, there is no need to go inside this switch again.
-  if (textEnd == 0){
+  if (_textEnd == 0){
     switch(ch)
       {
 	// --- Newline/carriage return ---
@@ -44,7 +44,7 @@ void Text::xte_writeby_letter(){
 	tc->cursorX= (tc->cursorX/TTE_TAB_WIDTH+1)*TTE_TAB_WIDTH;
 	break;
       case '\0':
-	textEnd = 1;
+	_textEnd = 1;
 	// --- Normal char ---
       default:
 	// Command sequence
@@ -82,6 +82,6 @@ void Text::xte_writeby_letter(){
 }
 
 void Text::xte_writeby_human(){
-  if (timer.random_frame())
+  if (_timer->random_frame())
     xte_writeby_letter();
 }
