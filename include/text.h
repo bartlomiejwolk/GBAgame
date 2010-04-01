@@ -7,7 +7,12 @@
 //! Additional functionality for TTE.
 class Text {
  public:
+  //! Constructor for xte_write_delayed() and xte_writeby_letter()
+  /*!
+    \param text string to be displayed
+   */
   Text(const char* text);
+  //! Constructor for xte_writeby_human()
   Text(const char* text, int, int, int, int, int);
   ~Text();
   //! Write characters one by one. Text to be written on screen must be given by class constructor. This method must be executed at least as many times as many letter is to display.
