@@ -35,15 +35,13 @@ void GameEngine::Draw() {
 }
 
 void GameEngine::update_seed(){
-  _frameCurr++;
  
-  if (_frameCurr == 65535) // It's the safe value. I'm not sure if 2^32 (4294967296) wouldn't make overflow.
-     _frameCurr = 0;
+  if (_timer.frame(65535)) // It's the safe value. I'm not sure if 2^32 (4294967296) wouldn't make overflow.
 
   // Update seed only when any key is pressed.
   if (key_hit(KEY_ANY)) {
     _seedPrev = _seedCurr;
-    _seedCurr = _frameCurr;
+    _seedCurr = _timer.get_framecurr();
   }
   // When no button is pressed, the previous frame will be always as current.
   else

@@ -21,9 +21,12 @@ class Timer {
     \param g1_prob Probability that g1 will be used rather than g2.
    */
   int random_frame();
+  int get_framecurr(){
+    return _frameCurr;
+  }
 
  private:
-  //! Holds frames (or rather num. of how many times this method correct_frame() was executed).
+  //! Holds frames (or rather num. of how many times this method frame() was executed).
   int _curFrame;
   //! Holds frames (or rather num. of how many times this method random_frame() was executed).
   int _frameCurr;
