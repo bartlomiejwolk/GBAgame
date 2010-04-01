@@ -18,7 +18,7 @@ Text::~Text(){
 
 void Text::xte_write_delayed(const int interval){
     // Display text only after so many frames as given in the arg.
-  if(timer.correct_frame(interval))
+  if(timer.frame(interval))
     // Write another letter
     xte_writeby_letter();
 }

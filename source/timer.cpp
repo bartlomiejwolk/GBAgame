@@ -10,7 +10,7 @@ Timer::Timer(){
 Timer::~Timer(){
 }
 
-int Timer::correct_frame(int frameNum) {
+int Timer::frame(int frameNum) {
   _curFrame++;
 
   // Return true after X passed frames. 

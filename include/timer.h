@@ -10,7 +10,7 @@ class Timer {
   Timer(int, int, int, int, int);
   ~Timer();
   //! Timer ticks (return 1) after interval passed by arg.
-  int correct_frame(int frameNum);
+  int frame(int frameNum);
 
     //! Return 1 at random frame.
   /*
