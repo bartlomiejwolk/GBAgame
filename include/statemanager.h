@@ -9,10 +9,6 @@ using namespace std;
 /*! StateManager */
 class StateManager {
 
- private:
-  //! The stack of states.
-  vector<IGameState*>* states;
-
  public:
   //! Constructor
   StateManager();
@@ -23,22 +19,25 @@ class StateManager {
     \param state IGameState obj.
     \sa PushState(), PopState()
    */
-  void ChangeState(IGameState* state); 
+  void change_state(IGameState* state); 
   //! Pause the current state and go to a new state.
   /*! 
     \param state state to put on stack
     \sa ChangeState(), PopState()
    */
-  void PushState(IGameState* state); 
+  void push_state(IGameState* state); 
   //! Leave current state and go to previous state.
-  void PopState(); 
+  void pop_state(); 
   //! Remove current state from states vector.
-  void Clear();
+  void clear();
   //! Return pointer to states vector
   vector<IGameState*>* ReturnStates() {
-    return states;
+    return _states;
   }
 
+   private:
+  //! The stack of states.
+  vector<IGameState*>* _states;
 };
 
 #endif

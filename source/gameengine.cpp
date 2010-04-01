@@ -6,7 +6,7 @@
 
 using namespace std;
 
-GameEngine::GameEngine(): seed_curr(736254) {
+GameEngine::GameEngine(): _seed_curr(736254) {
 
 }
 
@@ -19,9 +19,9 @@ void GameEngine::Init() {
 }
 
 void GameEngine::HandleEvents(StateManager* stateManager) {
-  vector<IGameState*>* states;
-  states = stateManager->ReturnStates(); // states is holding pointer to states vector
-  states->back()->HandleEvents(); // let current state handle events
+  vector<IGameState*>* _states;
+  _states = stateManager->ReturnStates(); // states is holding pointer to states vector
+  _states->back()->HandleEvents(); // let current state handle events
 
 }
 
@@ -34,24 +34,23 @@ void GameEngine::Draw() {
 
 }
 
-// --- update_seed() ---
 void GameEngine::update_seed(){
-  frame_curr++;
+  _frame_curr++;
  
-  if (frame_curr == 65535) // It's the safe value. I'm not sure if 2^32 (4294967296) wouldn't make overflow.
-     frame_curr = 0;
+  if (_frame_curr == 65535) // It's the safe value. I'm not sure if 2^32 (4294967296) wouldn't make overflow.
+     _frame_curr = 0;
 
   // Update seed only when any key is pressed.
   if (key_hit(KEY_ANY)) {
-    seed_prev = seed_curr;
-    seed_curr = frame_curr;
+    _seed_prev = _seed_curr;
+    _seed_curr = _frame_curr;
   }
   // When no button is pressed, the previous frame will be always as current.
   else
-    seed_prev = seed_curr;
+    _seed_prev = _seed_curr;
 
   // Update seed using srand()
-  if (seed_curr != seed_prev)
-    srand(seed_curr);
+  if (_seed_curr != _seed_prev)
+    srand(_seed_curr);
 }
-// ^^^ update_seed() ^^^
+

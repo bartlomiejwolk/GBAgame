@@ -16,7 +16,7 @@ int main() {
   game.Init();
 
   // Set initial state
-  stateManager.ChangeState(&titleScreen);
+  stateManager.change_state(&titleScreen);
 
   // Move to GameEngine::init
   REG_DISPCNT= DCNT_MODE0 | DCNT_BG0;

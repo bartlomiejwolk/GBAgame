@@ -24,20 +24,20 @@ class Timer {
 
  private:
   //! Holds frames (or rather num. of how many times this method correct_frame() was executed).
-  int curFrame;
+  int _curFrame;
   //! Holds frames (or rather num. of how many times this method random_frame() was executed).
-  int frame_curr;
+  int _frame_curr;
   //! active == 1 means that there shoulnd't be drawn another frame_value because the method is waiting to return 1 at previous frame_value.
-  int active;
+  int _active;
   int _g1_min;
   int _g1_max;
   int _g2_min;
   int _g2_max;
   int _g1_prob;
-  int frame_value;
-  int g1_range;
-  int g2_range;
-  int generator;
+  int _frame_value;
+  int _g1_range;
+  int _g2_range;
+  int _generator;
 
 };
 

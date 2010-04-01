@@ -1,21 +1,21 @@
 #include "statemanager.h"
 
 StateManager::StateManager() {
-  // Initialize states.
-  states = new vector<IGameState*>;
+  // Initialize _states.
+  _states = new vector<IGameState*>;
 
 }
 StateManager::~StateManager() {
 
 }
 
-void StateManager::ChangeState(IGameState* state) {
+void StateManager::change_state(IGameState* state) {
   // Clean up the current state.
-   if (!states->empty()) {
-      states->back()->CleanUp(); // let the current state to end properly
-      states->pop_back();
+   if (!_states->empty()) {
+      _states->back()->CleanUp(); // let the current state to end properly
+      _states->pop_back();
   }
   // Store and init the new state.
-  states->push_back(state);
-  states->back()->Init(); 
+  _states->push_back(state);
+  _states->back()->Init(); 
 };

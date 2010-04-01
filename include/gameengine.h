@@ -15,22 +15,21 @@ class GameEngine {
   // --- update_seed() ---
 
   //! Store amount of frames that have passed from the beginning of the game. Used in update_seed().
-  uint frame_curr;
+  uint _frame_curr;
+  // these two were moved from public:
+  //! Value that is currently used for seeding srand()
+  int _seed_curr;
+  //! Previously used value for seeding srand()
+  int _seed_prev;
 
-  Timer timer;
-  // ^^^ update_seed() ^^^
  public:
-  // --- update_seed() ---
-  int seed_curr;
-  int seed_prev;
-  // ^^^ update_seed() ---
   //! Constructor
   GameEngine();
   //! Destructor
   ~GameEngine();
   //! Init
   void Init();
-  //! Operate on StateManager object
+  //! Operate on StateManager class object
   void HandleEvents(StateManager*);
   //! Update variables
   void Update();
