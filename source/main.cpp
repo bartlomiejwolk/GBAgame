@@ -34,15 +34,20 @@ int main() {
   pal_bg_bank[0][1]= CLR_YELLOW;
   // ^^^ Move to GameEngine::init()
 
-  Timer timer(8,10,11,20,30);
-  Text text("\nSome text to display, written by human.", &timer);
-  
+  char buffer[50];
+  int r = 0;
+  Timer timer;
+
   while (1) {
     vid_vsync();
     key_poll();
     game.update_seed();
 
-    text.xte_writeby_human();
+    r = rand();
+    sprintf(buffer,"\n%d",r);
+
+    if (timer.frame(10))
+      tte_write(buffer);
 
     game.HandleEvents(&stateManager);
     game.Update();

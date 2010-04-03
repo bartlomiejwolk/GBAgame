@@ -33,7 +33,7 @@ class GameEngine {
   void Update();
   //! Draw on screen
   void Draw();
-  //! Update seed variable for srand(). The seed value depend on pressed button and curFrame value at that time. Place it in main while().
+  //! Update _seedCurr variable for srand(). The seed value depend on pressed button and curFrame value at that time. Place it in main while().
   void update_seed();
 
 };

@@ -21,8 +21,11 @@ class Timer {
     \param g1_prob Probability that g1 will be used rather than g2.
    */
   int random_frame();
-  int get_framecurr(){
-    return _frameCurr;
+  int get_curframe(){
+    return _curFrame;
+  }
+  void set_curframe(int frame){
+    _curFrame = frame;
   }
 
  private:
