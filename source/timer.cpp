@@ -1,6 +1,9 @@
 #include "timer.h"
 
-Timer::Timer(int g1_min, int g1_max, int g2_min, int g2_max, int g1_prob): _curFrame(0), _frameCurr(0), _active(0), _g1Min(g1_min), _g1Max(g1_max), _g2Min(g2_min), _g2Max(g2_max), _g1Prob(g1_prob), _g1Range(g1_max - g1_min), _g2Range(g2_max - g2_min) {
+Timer::Timer(int g1_min, int g1_max, int g2_min, int g2_max, int g1_prob):  _active(0), _g1Min(g1_min), _g1Max(g1_max), _g2Min(g2_min), _g2Max(g2_max), _g1Prob(g1_prob), _g1Range(g1_max - g1_min), _g2Range(g2_max - g2_min) {
+  // !!! There should be better way to initialize these.
+  _curFrame[0] = 0;
+  _curFrame[1] = 0;
 }
 
 Timer::Timer(){
@@ -11,11 +14,11 @@ Timer::~Timer(){
 }
 
 int Timer::frame(int frameNum) {
-  _curFrame++;
+  _curFrame[0]++;
 
   // Return true after X passed frames. 
-  if(_curFrame == frameNum) {
-    _curFrame = 0;
+  if(_curFrame[0] == frameNum) {
+    _curFrame[0] = 0;
     return true;
   }
   return false;
@@ -23,7 +26,7 @@ int Timer::frame(int frameNum) {
 
 int Timer::random_frame(){
 
-  _frameCurr++;
+  _curFrame[1]++;
  
   // draw another frame?
   if (!_active){
@@ -43,9 +46,9 @@ int Timer::random_frame(){
   }
   
   // Return true when it's time
-  if (_frameValue == _frameCurr){
+  if (_frameValue == _curFrame[1]){
     _active = 0;
-    _frameCurr = 0;
+    _curFrame[1] = 0;
     return true;
   }
   

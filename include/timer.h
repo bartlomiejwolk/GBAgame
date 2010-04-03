@@ -22,17 +22,15 @@ class Timer {
    */
   int random_frame();
   int get_curframe(){
-    return _curFrame;
+    return _curFrame[0];
   }
   void set_curframe(int frame){
-    _curFrame = frame;
+    _curFrame[0] = frame;
   }
 
  private:
-  //! Holds frames (or rather num. of how many times this method frame() was executed).
-  int _curFrame;
-  //! Holds frames (or rather num. of how many times this method random_frame() was executed).
-  int _frameCurr;
+  //! _curFrame[0] holds frames (or rather num. of how many times this method frame() was executed). _curFrame[1] holds number of how many times the method random_frame() was executed.
+  int _curFrame[2];
   //! active == 1 means that there shoulnd't be drawn another frame_value because the method is waiting to return 1 at previous frame_value.
   int _active;
   int _g1Min;
