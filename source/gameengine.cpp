@@ -14,22 +14,22 @@ GameEngine::~GameEngine() {
 
 }
 
-void GameEngine::Init() {
+void GameEngine::init() {
   
 }
 
-void GameEngine::HandleEvents(StateManager* stateManager) {
+void GameEngine::handle_events(StateManager* stateManager) {
   vector<IGameState*>* _states;
   _states = stateManager->ReturnStates(); // states is holding pointer to states vector
   _states->back()->HandleEvents(); // let current state handle events
 
 }
 
-void GameEngine::Update() {
+void GameEngine::update() {
 
 };
 
-void GameEngine::Draw() {
+void GameEngine::draw() {
 
 
 }

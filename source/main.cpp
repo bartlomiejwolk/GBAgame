@@ -14,7 +14,7 @@ int main() {
   TitleScreen titleScreen;
   StateManager stateManager;
 
-  game.Init();
+  game.init();
 
   // Set initial state
   stateManager.change_state(&titleScreen);
@@ -49,9 +49,9 @@ int main() {
     if (timer.frame(10))
       tte_write(buffer);
 
-    game.HandleEvents(&stateManager);
-    game.Update();
-    game.Draw();
+    game.handle_events(&stateManager);
+    game.update();
+    game.draw();
   }
   return 0;
 }
