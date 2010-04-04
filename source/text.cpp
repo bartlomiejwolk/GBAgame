@@ -9,7 +9,7 @@ Text::Text(const char* text): str((char*)text), tc(tte_get_context()), _textEnd(
 
 // Second constructor (overloaded)
 Text::Text(const char* text, Timer* timer): str((char*)text), tc(tte_get_context()), _textEnd(0), _curFrame(0){
-  _timer = timer;
+  _ptimer = timer;
 }
 
 Text::~Text(){
@@ -18,7 +18,7 @@ Text::~Text(){
 
 void Text::xte_write_delayed(const int interval){
     // Display text only after so many frames as given in the arg.
-  if(_timer->frame(interval))
+  if(_ptimer->frame(interval))
     // Write another letter
     xte_writeby_letter();
 }
@@ -82,6 +82,6 @@ void Text::xte_writeby_letter(){
 }
 
 void Text::xte_writeby_human(){
-  if (_timer->random_frame())
+  if (_ptimer->random_frame())
     xte_writeby_letter();
 }

@@ -32,12 +32,12 @@ class StateManager {
   void clear();
   //! Return pointer to states vector
   vector<IGameState*>* ReturnStates() {
-    return _states;
+    return _pstates;
   }
 
    private:
   //! The stack of states.
-  vector<IGameState*>* _states;
+  vector<IGameState*>* _pstates;
 };
 
 #endif

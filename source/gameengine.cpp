@@ -43,7 +43,7 @@ void GameEngine::update_seed(){
   // Update seed only when any key is pressed.
   if (key_hit(KEY_ANY)) {
     _seedPrev = _seedCurr;
-    _seedCurr = _timer.get_curframe();
+    _seedCurr = _timer.get_curframe(0);
   }
   // When no button is pressed, the previous frame will be always as current.
   else

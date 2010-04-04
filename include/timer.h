@@ -7,41 +7,71 @@
 class Timer {
  public:
   Timer();
-  Timer(int, int, int, int, int);
-  ~Timer();
-  //! Timer ticks (return 1) after interval passed by arg.
-  int frame(int frameNum);
-
-    //! Return 1 at random frame.
-  /*
-    \param g1_beg Minimum interval for generator 1 (in frames) that can be drawn.
-    \param g1_end Maximum interval for generator 1 that can be drawn.
-    \param g2_beg 
-    \param g2_end
+  //! Initialize variables for random_frame().
+  /*!
+    \param g1_min Minimum frame for generator 1 that can be drawn.
+    \param g1_max Maximum frame for generator 1 that can be drawn.
+    \param g2_min 
+    \param g2_max
     \param g1_prob Probability that g1 will be used rather than g2.
    */
+  Timer(int, int, int, int, int);
+  ~Timer();
+  //! method
+  /*!
+    \c _curFrame[0]
+    \return  true after interval passed by arg.
+  */
+  int frame(int frameNum);
+
+  //! short
+  /*!
+    Arguments are given to the constructor.
+
+    \b Uses: \n
+    \c int _curFrame[1] \n
+    \c GENERATOR _gen
+    
+    \return true at random frame.
+    \sa Timer(int, int, int, int, int)
+   */
   int random_frame();
-  int get_curframe(){
-    return _curFrame[0];
+  //! Return _curFrame
+  /*!
+    \param num _curFrame has two instances. See _curFrame[].
+  */
+  int get_curframe(int num){
+    return _curFrame[num];
   }
+  //! Set _curFrame[]
   void set_curframe(int frame){
     _curFrame[0] = frame;
   }
 
  private:
-  //! _curFrame[0] holds frames (or rather num. of how many times this method frame() was executed). _curFrame[1] holds number of how many times the method random_frame() was executed.
+  //! Variable
+  /*!
+    Holds number of how many times a method was executed.
+\sa frame() [0]
+\sa random_frame() [1]
+  */
   int _curFrame[2];
-  //! active == 1 means that there shoulnd't be drawn another frame_value because the method is waiting to return 1 at previous frame_value.
-  int _active;
-  int _g1Min;
-  int _g1Max;
-  int _g2Min;
-  int _g2Max;
-  int _g1Prob;
+
+  //! Variables for method random_frame()
+  struct GENERATOR {
+    //! active == 1 means that there shoulnd't be drawn another frame_value because the method is waiting to return 1 at previous frame_value.
+    int active;
+    int g1min;
+    int g1max;
+    int g2min;
+    int g2max;
+    int g1prob;
+    int g1range;
+    int g2range;
+    int genNum;
+  }_gen;
+
   int _frameValue;
-  int _g1Range;
-  int _g2Range;
-  int _generator;
 
 };
 

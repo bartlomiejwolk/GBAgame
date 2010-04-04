@@ -30,6 +30,7 @@ class Text {
   void xte_write_delayed(const int interval);
   //! Write text one character in each frame.
   void xte_writeby_letter();
+  //! Write text like human
   void xte_writeby_human();
 
  private:
@@ -40,6 +41,6 @@ class Text {
   //! Is set to 1 by instruction inside switch after last char is displayed.
   int _textEnd;
   int _curFrame;
-  Timer* _timer;
+  Timer* _ptimer;
 };
 #endif

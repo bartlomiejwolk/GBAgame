@@ -1,9 +1,18 @@
 #include "timer.h"
 
-Timer::Timer(int g1_min, int g1_max, int g2_min, int g2_max, int g1_prob):  _active(0), _g1Min(g1_min), _g1Max(g1_max), _g2Min(g2_min), _g2Max(g2_max), _g1Prob(g1_prob), _g1Range(g1_max - g1_min), _g2Range(g2_max - g2_min) {
+Timer::Timer(int g1_min, int g1_max, int g2_min, int g2_max, int g1_prob) {
   // !!! There should be better way to initialize these.
   _curFrame[0] = 0;
   _curFrame[1] = 0;
+
+  _gen.active = 0;
+  _gen.g1min = g1_min;
+  _gen.g1max = g1_max;
+  _gen.g2min = g2_min;
+  _gen.g2max = g2_max;
+  _gen.g1prob = g1_prob;
+  _gen.g1range = g1_max - g1_min;
+  _gen.g2range = g2_max - g2_min;
 }
 
 Timer::Timer(){
@@ -26,28 +35,28 @@ int Timer::frame(int frameNum) {
 
 int Timer::random_frame(){
 
-  _curFrame[1]++;
+  _curFrame[1]++; 
  
   // draw another frame?
-  if (!_active){
+  if (!_gen.active){
     
     // Draw g1 or g2
-    _generator = rand() % 100 + 1;
+    _gen.genNum = rand() % 100 + 1;
     
     // if g1
-    if (_generator <= _g1Prob)
+    if (_gen.genNum <= _gen.g1prob)
       // Draw frame from g1
-      _frameValue = rand() % (_g1Range + 1) + _g1Min;
+      _frameValue = rand() % (_gen.g1range + 1) + _gen.g1min;
     else
       // Draw frame from g2
-      _frameValue = rand() % (_g2Range + 1) + _g2Min;
+      _frameValue = rand() % (_gen.g2range + 1) + _gen.g2min;
     
-    _active = 1;
+    _gen.active = 1;
   }
   
   // Return true when it's time
   if (_frameValue == _curFrame[1]){
-    _active = 0;
+    _gen.active = 0;
     _curFrame[1] = 0;
     return true;
   }
