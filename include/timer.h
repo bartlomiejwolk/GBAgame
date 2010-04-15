@@ -3,7 +3,7 @@
 
 #include <stdlib.h>
 
-//!
+//! Returns true after any given period of time
 class Timer {
  public:
   Timer();
@@ -19,22 +19,24 @@ class Timer {
   ~Timer();
   //! method
   /*!
-    \c _curFrame[0]
+    \param[in] frameNum Number of frames where when method will be inactive.
+    \par Uses:
+    \c Timer::_curFrame[0]
     \return  true after interval passed by arg.
   */
   int frame(int frameNum);
 
-  //! short
+  //! Timer that ticks irregularly
   /*!
-    Arguments are given to the constructor.
+    \par Description
+    Define two frame ranges and a probability to use one of them. Arguments are given to the Timer(int, int, int, int, int) and are described there.
 
-    \b Uses: \n
-    \c int _curFrame[1] \n
-    \c GENERATOR _gen
+    \par Uses:
+    \c int Timer::_curFrame[1] \n
+    \c GENERATOR Timer::_gen
     
     \return true at random frame.
-    \sa Timer(int, int, int, int, int)
-   */
+  */
   int random_frame();
   //! Return _curFrame
   /*!
@@ -43,21 +45,27 @@ class Timer {
   int get_curframe(int num){
     return _curFrame[num];
   }
-  //! Set _curFrame[]
+  //! Set variable int Timer::_curFrame[]
+  /*!
+
+   */
   void set_curframe(int frame){
     _curFrame[0] = frame;
   }
 
  private:
-  //! Variable
+  //! Holds number of how many times a method was executed.
   /*!
-    Holds number of how many times a method was executed.
-\sa frame() [0]
-\sa random_frame() [1]
+    \par Is used by: 
+     frame() \n
+     random_frame()
   */
   int _curFrame[2];
 
   //! Variables for method random_frame()
+  /*!
+
+   */
   struct GENERATOR {
     //! active == 1 means that there shoulnd't be drawn another frame_value because the method is waiting to return 1 at previous frame_value.
     int active;
@@ -70,9 +78,15 @@ class Timer {
     int g2range;
     int genNum;
   }_gen;
-
+  
+  //! This value is randomly generated. Used to know after how many frames return true.
+  /*!
+    \par Is used by
+    random_frame()
+   */
   int _frameValue;
 
 };
 
 #endif
+

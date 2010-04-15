@@ -85,3 +85,7 @@ void Text::xte_writeby_human(){
   if (_ptimer->random_frame())
     xte_writeby_letter();
 }
+
+void Text::xte_scroll_text(){
+
+}
