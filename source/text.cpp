@@ -26,8 +26,10 @@ void Text::xte_write_delayed(const int interval){
 void Text::xte_writeby_letter(){
   str++;
   ch = *str; 
-  // Everything within switch is to interpret and display text on screen. When all text given by arg. is displayed, there is no need to go inside this switch again.
+
+  // Everything within switch is to interpret and display text on screen. When all text given by str is displayed, there is no need to go inside this switch again.
   if (_textEnd == 0){
+
     switch(ch)
       {
 	// --- Newline/carriage return ---

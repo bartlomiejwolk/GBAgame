@@ -2,7 +2,7 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Mon Mar 29 12:54:47 2010
+;; Created Thu Apr 15 20:44:50 2010
 ;; Desktop file format version 206
 ;; Emacs version 22.2.1
 
@@ -20,7 +20,29 @@
   "main.cpp"
   'c++-mode
   '(abbrev-mode)
-  153
+  1660
+  '(1663 t)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/special/devkitpro/crcproj/source/text.cpp"
+  "text.cpp"
+  'c++-mode
+  '(abbrev-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/special/devkitpro/crcproj/include/text.h"
+  "text.h"
+  'c-mode
+  '(abbrev-mode)
+  1
   '(nil nil)
   nil
   nil
