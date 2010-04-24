@@ -44,10 +44,6 @@ int main() {
   // contain y coordinate
   char scroll_value[20];
 
-  // print some text
-  //tte_write("aaaa aaa");
-  tte_write("#{P:32,32}Also available in 8x16");
-
   while (1) {
     vid_vsync();
     key_poll();
@@ -55,21 +51,22 @@ int main() {
 
     // scroll bg
     //    y += key_tri_vert();
-    if (timer.frame(5))
-      if (key_is_down(KEY_DOWN)) {
-	y--;
+    if (timer.frame(3)) {
+	y++;
 	REG_BG0VOFS = y;
       }
 
     // reset y
-    //    if (y == 32*8)
-    if (y == -30) {
+    if (y == -32*8) {
       y = 0;
     }
+
     // display some text
     sprintf(scroll_value, "#{P:0,0}%d   ", y);
     //if (key_tri_vert())
     tte_write(scroll_value);
+
+    text.xte_scroll_text();
 
     game.handle_events(&stateManager);
     game.update();

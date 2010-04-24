@@ -2,7 +2,7 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Thu Apr 15 20:44:50 2010
+;; Created Fri Apr 23 18:08:13 2010
 ;; Desktop file format version 206
 ;; Emacs version 22.2.1
 
@@ -15,6 +15,17 @@
 (setq register-alist nil)
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 206
+  "/home/special/devkitpro/crcproj/.git/COMMIT_EDITMSG"
+  "COMMIT_EDITMSG"
+  'fundamental-mode
+  nil
+  471
+  '(1 t)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
 (desktop-create-buffer 206
   "/home/special/devkitpro/crcproj/source/main.cpp"
   "main.cpp"

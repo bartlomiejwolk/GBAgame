@@ -38,7 +38,10 @@ class Text {
    */
   void xte_write_delayed(const int interval);
   //! Write text one character in each frame.
-
+  /*!
+    \par Todo:
+    - Remove variable _textEnd and in the if statement use str var. instead.
+   */
   void xte_writeby_letter();
   //! Write text like human
   void xte_writeby_human();
