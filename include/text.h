@@ -41,15 +41,23 @@ class Text {
   /*!
     \par Todo:
     - Remove variable _textEnd and in the if statement use str var. instead.
+    - Move str++ to the end to make it increment after a char is displayed.
    */
   void xte_writeby_letter();
   //! Write text like human
   void xte_writeby_human();
   //! Scroll text (like in the movies)
+  /*!
+    \par Todo:
+    - add constraint to the line var. Max line can be 31*8
+   */
   void xte_scroll_text();
   
   //! Helper function
   void draw_new_line();
+
+  //! Helper function
+  int textline();
 
  private:
   char *str; 
@@ -61,6 +69,9 @@ class Text {
   int _curFrame;
   // screen position
   int y;
+  // line num. for drawing text
+  int line;
+
 
   //! Pointer for Timer obj. given by constructor
   /*!
