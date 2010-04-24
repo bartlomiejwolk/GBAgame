@@ -47,6 +47,9 @@ class Text {
   void xte_writeby_human();
   //! Scroll text (like in the movies)
   void xte_scroll_text();
+  
+  //! Helper function
+  void draw_new_line();
 
  private:
   char *str; 
@@ -56,6 +59,9 @@ class Text {
   //! Is set to 1 by instruction inside switch after last char is displayed.
   int _textEnd;
   int _curFrame;
+  // screen position
+  int y;
+
   //! Pointer for Timer obj. given by constructor
   /*!
     \par Used by:
