@@ -55,9 +55,8 @@ class Text {
   
   //! Helper function
   void draw_new_line();
-
   //! Helper function
-  int textline();
+  void  clear_line();
 
  private:
   char *str; 
@@ -69,9 +68,6 @@ class Text {
   int _curFrame;
   // screen position
   int y;
-  // line num. for drawing text
-  int line;
-
 
   //! Pointer for Timer obj. given by constructor
   /*!
