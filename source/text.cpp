@@ -8,7 +8,7 @@ Text::Text(const char* text): str((char*)text), tc(tte_get_context()), _textEnd(
 }
 
 // Second constructor (overloaded)
-Text::Text(const char* text, Timer* timer): str((char*)text), tc(tte_get_context()), _textEnd(0), _curFrame(0), y(0), line(20*8) {
+Text::Text(const char* text, Timer* timer): str((char*)text), tc(tte_get_context()), _textEnd(0), _curFrame(0), y(11*8), line(20*8) {
   _ptimer = timer;
 }
 
@@ -91,7 +91,7 @@ void Text::xte_writeby_human(){
 void Text::xte_scroll_text(){
 
   // scroll bg
-  if (_ptimer->frame(2)) {
+  if (_ptimer->frame(4)) {
     y++;
     REG_BG0VOFS = y;
     
