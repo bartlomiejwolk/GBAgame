@@ -37,22 +37,15 @@ int main() {
   // ^^^ Move to GameEngine::init()
 
   Timer timer;
-  Text text(" Sunrise,\n sunset,\n sunrise,\n sunset...\n goes\n the\n song\n of\n the\n Fidler\n on\n the\n Roof.\n You\n can\n almost\n see\n the\n journey\n of\n the\n sun\n as\n it\n moves\n rfom\n one\n horizon\n (the floor)\n to\n its\n noonday\n heights\n in\n the\n sky\n overhead\n (ceiling)\n and\n then\n disappears\n over\n the\n other\n horizon\n - day\n ofter\n day\n marking\n the\n span\n of\n our\n lives.\n \n \n \n \n \n \n \n \n ",&timer);
+  Text text(" Sunrise,\n sunset,\n sunrise,\n sunset...\n goes\n the\n song\n of\n the\n Fidler\n on\n the\n Roof.\n You\n can\n almost\n see\n the\n journey\n of\n the\n sun\n as\n it\n moves\n rfom\n one\n horizon\n (the floor)\n to\n its\n noonday\n heights\n in\n the\n sky\n overhead\n (ceiling)\n and\n then\n disappears\n over\n the\n other\n horizon\n - day\n ofter\n day\n marking\n the\n span\n of\n our\n lives.\n \n \n \n \n \n \n \n \n",&timer);
   
-  // contain y coordinate
-  char scroll_value[20];
-
   while (1) {
     vid_vsync();
     key_poll();
     game.update_seed();
 
-    // display some text
-    //sprintf(scroll_value, "#{P:0,0}%d   ", 0);
-    //if (key_tri_vert())
-    //    tte_write(scroll_value);
-
-    text.xte_scroll_text();
+    //    text.xte_scroll_text();
+    text.xte_writeby_letter();
 
     game.handle_events(&stateManager);
     game.update();

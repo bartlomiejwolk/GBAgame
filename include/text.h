@@ -43,7 +43,7 @@ class Text {
     - Remove variable _textEnd and in the if statement use str var. instead.
     - Move str++ to the end to make it increment after a char is displayed.
    */
-  void xte_writeby_letter();
+  int xte_writeby_letter();
   //! Write text like human
   void xte_writeby_human();
   //! Scroll text (like in the movies)

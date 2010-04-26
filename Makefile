@@ -57,4 +57,4 @@ clean :
 
 
 tar:
-	tar cfv crcproj.tar *
+	tar cfvz crcproj.tar.gz * 
