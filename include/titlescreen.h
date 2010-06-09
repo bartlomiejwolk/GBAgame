@@ -4,11 +4,12 @@
 #include "gamestate.h"
 #include "text.h"
 #include "timer.h"
+#include "statemanager.h"
 
 /*! Class derivated from IGameState. */
 class TitleScreen: public IGameState {
  public:
-  TitleScreen();
+  TitleScreen(StateManager*);
   //! Initialize state
   void Init();
   //! Finish current state
@@ -20,6 +21,7 @@ class TitleScreen: public IGameState {
   //! Display on screen
   void Display();
  private:
+  StateManager* _stateManager;
   Text _option1;
   Timer _timer1;
 };

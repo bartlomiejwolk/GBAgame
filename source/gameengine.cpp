@@ -22,11 +22,12 @@ void GameEngine::handle_events(StateManager* stateManager) {
   vector<IGameState*>* _states;
   _states = stateManager->ReturnStates(); // states is holding pointer to states vector
   _states->back()->HandleEvents(); // let current state handle events
-
 }
 
 void GameEngine::update(StateManager* stateManager) {
-  
+  vector<IGameState*>* _states;
+  _states = stateManager->ReturnStates(); // states is holding pointer to states vector
+  _states->back()->Update(); // let current state handle events
 };
 
 void GameEngine::draw() {

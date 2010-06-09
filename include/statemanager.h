@@ -34,8 +34,7 @@ class StateManager {
   vector<IGameState*>* ReturnStates() {
     return _pstates;
   }
-  IGameState* back_state();
-
+ 
    private:
   //! The stack of states.
   vector<IGameState*>* _pstates;
