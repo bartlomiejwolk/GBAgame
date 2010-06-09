@@ -5,11 +5,12 @@
 #include "text.h"
 #include "timer.h"
 #include "statemanager.h"
+#include "xtewritebyletter.h"
 
 /*! Class derivated from IGameState. */
 class TitleScreen: public IGameState {
  public:
-  TitleScreen(StateManager*);
+  TitleScreen(StateManager*, Xtewritebyletter*);
   //! Initialize state
   void Init();
   //! Finish current state
@@ -24,5 +25,6 @@ class TitleScreen: public IGameState {
   StateManager* _stateManager;
   Text _option1;
   Timer _timer1;
+  Xtewritebyletter* _xtewritebyletter;
 };
 #endif

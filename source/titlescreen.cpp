@@ -1,7 +1,8 @@
 #include "titlescreen.h"
 
-TitleScreen::TitleScreen(StateManager* state): _option1("xte_writeby_letter",&_timer1) {
+TitleScreen::TitleScreen(StateManager* state, Xtewritebyletter* xtewritebyletter): _option1("xte_writeby_letter",&_timer1) {
   _stateManager = state;
+  _xtewritebyletter = xtewritebyletter;
 }
 
 void TitleScreen::Init(){
@@ -17,8 +18,8 @@ void TitleScreen::CleanUp(){
 
 void TitleScreen::HandleEvents(){
   // if button a then changestate to xte_scroll_text()
-  //  if (key_hit(KEY_A))
-    
+  if (key_hit(KEY_A))
+    _stateManager->change_state(_xtewritebyletter);
 }
 
 void TitleScreen::Update(){

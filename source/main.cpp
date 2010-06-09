@@ -15,7 +15,9 @@ int main() {
 
   GameEngine game;
   StateManager stateManager;
-  TitleScreen titleScreen(&stateManager);
+  Xtewritebyletter xtewritebyletter;
+  TitleScreen titleScreen(&stateManager, &xtewritebyletter);
+
 
 
   REG_DISPCNT= DCNT_MODE0 | DCNT_BG0;
