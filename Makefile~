@@ -4,8 +4,8 @@ EXT	:= gba
 # project directory
 UDIR	:= ~/devkitpro/$(PROJ)
 # list of all .c files to be compiled
-CFILES	:=  
-CPPFILES	:= $(UDIR)/source/main.cpp $(UDIR)/source/gameengine.cpp $(UDIR)/source/gamestate.cpp $(UDIR)/source/statemanager.cpp $(UDIR)/source/text.cpp $(UDIR)/source/timer.cpp $(UDIR)/source/titlescreen.cpp $(UDIR)/source/menu.cpp $(UDIR)/source/xtewritebyletter.cpp $(UDIR)/source/xtewritebyhuman.cpp $(UDIR)/source/xtescrolltext.cpp
+CFILES	:=  $(UDIR)/source/menu.c
+CPPFILES	:= $(UDIR)/source/main.cpp $(UDIR)/source/gameengine.cpp $(UDIR)/source/gamestate.cpp $(UDIR)/source/statemanager.cpp $(UDIR)/source/text.cpp $(UDIR)/source/timer.cpp $(UDIR)/source/titlescreen.cpp
 # List of object files. Every .c file will become object file
 COBJS	:= $(CFILES:.c=.o) 
 CPPOBJS	:= $(CPPFILES:.cpp=.o)
@@ -26,7 +26,7 @@ INCLUDE	:= -I$(LIBTONC)/include -I$(CURDIR)/include
 # compiler option - path to "lib" folder within tonc's library
 LIBPATHS:= -L$(LIBTONC)/lib
 # compiler option - adds "libtonc.a"  
-LIBS	:= -ltonc
+LIBS	:= -ltonc -lgfx
 DEBUG	:= -g
 # -O2 (optimalization) has been removed for gdb to work better
 CFLAGS 	:= $(INCLUDE) $(LIBTONC) $(LIBS) $(DEBUG) -Wall -mthumb -mthumb-interwork -gdwarf-2
