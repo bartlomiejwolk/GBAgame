@@ -19,3 +19,7 @@ void StateManager::change_state(IGameState* state) {
   _pstates->push_back(state);
   _pstates->back()->Init(); 
 };
+
+IGameState* StateManager::back_state() {
+  return _pstates->back();
+};
