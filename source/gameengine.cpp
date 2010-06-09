@@ -25,8 +25,8 @@ void GameEngine::handle_events(StateManager* stateManager) {
 
 }
 
-void GameEngine::update() {
-
+void GameEngine::update(StateManager* stateManager) {
+  
 };
 
 void GameEngine::draw() {

@@ -30,7 +30,7 @@ class GameEngine {
   //! Operate on StateManager class object
   void handle_events(StateManager*);
   //! Update variables
-  void update();
+  void update(StateManager*);
   //! Draw on screen
   void draw();
   //! Update _seedCurr variable for srand(). The seed value depend on pressed button and curFrame value at that time. Place it in main while().

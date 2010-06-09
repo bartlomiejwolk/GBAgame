@@ -2,10 +2,13 @@
 #define TITLESCREEN_H
 
 #include "gamestate.h"
+#include "text.h"
+#include "timer.h"
 
 /*! Class derivated from IGameState. */
 class TitleScreen: public IGameState {
  public:
+  TitleScreen();
   //! Initialize state
   void Init();
   //! Finish current state
@@ -17,7 +20,7 @@ class TitleScreen: public IGameState {
   //! Display on screen
   void Display();
  private:
-
+  Text _option1;
+  Timer _timer1;
 };
-
 #endif
