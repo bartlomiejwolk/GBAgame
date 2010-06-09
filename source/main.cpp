@@ -10,6 +10,36 @@
 
 int main() {
 
+  irq_init(NULL);
+  irq_add(II_VBLANK, NULL);
+
+  // units
+  /*  const TMenuItem units[]= {
+    {
+      "xte_writeby_letter()",
+      "Write characters one in each call",
+      
+    },
+    {
+      "xte_write_delayed()",
+      "Write each character after constant time given in frames",
+      
+    },
+    {
+      "xte_writeby_human()",
+      "Write text like human",
+      
+    },
+    {
+      "xte_scroll_text()",
+      "Scroll text (like in the movies)",
+      
+    }
+  };*/
+
+  //  TMenu menu;
+  //  menu_create(&menu, units, countof(units));
+
   GameEngine game;
   TitleScreen titleScreen;
   StateManager stateManager;
@@ -37,15 +67,15 @@ int main() {
   // ^^^ Move to GameEngine::init()
 
   Timer timer;
-  Text text(" Sunrise,\n sunset,\n sunrise,\n sunset...\n goes\n the\n song\n of\n the\n Fidler\n on\n the\n Roof.\n You\n can\n almost\n see\n the\n journey\n of\n the\n sun\n as\n it\n moves\n rfom\n one\n horizon\n (the floor)\n to\n its\n noonday\n heights\n in\n the\n sky\n overhead\n (ceiling)\n and\n then\n disappears\n over\n the\n other\n horizon\n - day\n ofter\n day\n marking\n the\n span\n of\n our\n lives.\n \n \n \n \n \n \n \n \n",&timer);
+  Text text(" Sunrise,\n sunset,\n sunrise,\n sunset...\n goes\n the\n song\n of\n the\n Fidler\n on\n the\n Roof.\n You\n can\n almost\n see\n the\n journey\n of\n the\n sun\n as\n it\n moves\n rfom\n one\n horizon\n (the floor)\n to\n its\n noonday\n heights\n in\n the\n sky\n overhead\n (ceiling)\n and\n then\n disappears\n over\n the\n other\n horizon\n - day\n ofter\n day\n marking\n the\n span\n of\n our\n lives.\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n",&timer);
   
   while (1) {
     vid_vsync();
     key_poll();
     game.update_seed();
 
-    //    text.xte_scroll_text();
-    text.xte_writeby_letter();
+    text.xte_scroll_text();
+    //    text.xte_writeby_letter();
 
     game.handle_events(&stateManager);
     game.update();

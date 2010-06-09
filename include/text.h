@@ -40,16 +40,14 @@ class Text {
   //! Write text one character in each frame.
   /*!
     \par Todo:
-    - Remove variable _textEnd and in the if statement use str var. instead.
-    - Move str++ to the end to make it increment after a char is displayed.
-   */
+  */
   int xte_writeby_letter();
   //! Write text like human
   void xte_writeby_human();
   //! Scroll text (like in the movies)
   /*!
     \par Todo:
-    - add constraint to the line var. Max line can be 31*8
+    - find out why bg stops scrolling after displaying all text
    */
   void xte_scroll_text();
   

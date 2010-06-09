@@ -2,7 +2,7 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Sat Apr 24 11:36:10 2010
+;; Created Tue May  4 20:21:34 2010
 ;; Desktop file format version 206
 ;; Emacs version 22.2.1
 
@@ -16,12 +16,45 @@
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
 (desktop-create-buffer 206
+  "/home/special/devkitpro/crcproj/Makefile"
+  "Makefile"
+  'makefile-gmake-mode
+  nil
+  1450
+  '(1454 t)
+  nil
+  nil
+  '((indent-tabs-mode . t) (buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/special/devkitpro/crcproj/source/timer.cpp"
+  "timer.cpp"
+  'c++-mode
+  '(abbrev-mode)
+  1192
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
   "/home/special/devkitpro/crcproj/source/main.cpp"
   "main.cpp"
   'c++-mode
   '(abbrev-mode)
-  1193
+  1406
   '(1201 t)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/special/devkitpro/crcproj/source/gameengine.cpp"
+  "gameengine.cpp"
+  'c++-mode
+  '(abbrev-mode)
+  556
+  '(nil nil)
   nil
   nil
   '((buffer-file-coding-system . undecided-unix)))
@@ -44,17 +77,6 @@
   '(abbrev-mode)
   1872
   '(2024 t)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/home/special/devkitpro/crcproj/source/timer.cpp"
-  "timer.cpp"
-  'c++-mode
-  '(abbrev-mode)
-  278
-  '(nil nil)
   nil
   nil
   '((buffer-file-coding-system . undecided-unix)))

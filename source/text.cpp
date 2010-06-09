@@ -94,8 +94,7 @@ void Text::xte_writeby_human(){
 }
 
 void Text::xte_scroll_text(){
-
-  // scroll bg
+   // scroll bg
   if (_ptimer->frame(2)) {
     y++;
     REG_BG0VOFS = y;
@@ -103,11 +102,13 @@ void Text::xte_scroll_text(){
     // 8px
     if ((y % 8) == 0) {
       clear_line();
-      draw_new_line();
+      // if statement added
+      if ((ch = *str) != '\0')
+	draw_new_line();
     }
   }
 
-  // reset y0
+  // reset y
   if (y == 32*8) {
     y = 0;
   }
@@ -125,6 +126,7 @@ void Text::clear_line() {
   int cursorX_val = tc->cursorX;
   int cursorY_val = tc->cursorY;
   
+  // wouldn't it be better to clear with zeros the memory area of that line?
   tte_write("                    ");
 
   // restore saved values
