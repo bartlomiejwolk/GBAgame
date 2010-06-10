@@ -7,6 +7,7 @@ Xtewritebyletter::Xtewritebyletter() : _text("This is demo for xte_writeby_lette
 void Xtewritebyletter::Init(){
   // clear screen
   tte_write("#{er:0,0,239,159}");
+  tte_write("#{P;}");
 }
 
 void Xtewritebyletter::CleanUp(){
@@ -21,7 +22,6 @@ void Xtewritebyletter::Update(){
   
   _text.xte_writeby_letter();
 
-  //  tte_write("something");
 }
 
 void Xtewritebyletter::Display(){
