@@ -10,6 +10,8 @@
 #include "xtewritebyletter.h"
 #include "xtewritedelayed.h"
 
+Xtewritedelayed xtewritedelayed;
+
 int main() {
 
   irq_init(NULL);
@@ -19,7 +21,7 @@ int main() {
   StateManager stateManager;
   Xtewritebyletter xtewritebyletter;
 
-  Xtewritedelayed xtewritedelayed;
+
 
   TitleScreen titleScreen(&stateManager, &xtewritebyletter);
 

@@ -6,7 +6,9 @@
 #include "timer.h"
 #include "statemanager.h"
 #include "xtewritebyletter.h"
+#include "xtewritedelayed.h"
 
+extern Xtewritedelayed xtewritedelayed;
 
 /*! Class derivated from IGameState. */
 class TitleScreen: public IGameState {
