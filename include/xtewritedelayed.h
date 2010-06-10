@@ -2,6 +2,8 @@
 #define XTEWRITEDELAYED_H
 
 #include "gamestate.h"
+#include "text.h"
+#include <tonc.h>
 
 class Xtewritedelayed: public IGameState {
  public:
@@ -18,7 +20,8 @@ class Xtewritedelayed: public IGameState {
   void Display();
   
  private:
-
+  Text* _text;
+  Timer* _timer;
 };
 
 

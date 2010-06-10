@@ -8,7 +8,7 @@
 #include "xtewritebyletter.h"
 #include "xtewritedelayed.h"
 
-extern Xtewritedelayed xtewritedelayed;
+
 
 /*! Class derivated from IGameState. */
 class TitleScreen: public IGameState {
@@ -29,6 +29,7 @@ class TitleScreen: public IGameState {
   Text _option1;
   Timer _timer1;
   Xtewritebyletter* _xtewritebyletter;
+
 
   // menu index
   uint menuIndex;

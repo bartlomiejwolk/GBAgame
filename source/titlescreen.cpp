@@ -1,5 +1,7 @@
 #include "titlescreen.h"
 
+extern Xtewritedelayed xtewritedelayed;
+
 TitleScreen::TitleScreen(StateManager* state, Xtewritebyletter* xtewritebyletter): _option1("xte_writeby_letter",&_timer1) {
   _stateManager = state;
   _xtewritebyletter = xtewritebyletter;
@@ -18,8 +20,8 @@ void TitleScreen::CleanUp(){
 
 void TitleScreen::HandleEvents(){
   // if button a then changestate to xte_scroll_text()
-  if (key_hit(KEY_A))
-    _stateManager->change_state(_xtewritebyletter);
+  /*  if (key_hit(KEY_A))
+      _stateManager->change_state(_xtewritebyletter);*/
 
   // moving through the menu
   if (key_hit(KEY_DOWN))
@@ -36,9 +38,9 @@ void TitleScreen::HandleEvents(){
 	break;
       case 1:     _stateManager->change_state(&xtewritedelayed);
 	break;
-	  /*      case 2:     _stateManager->change_state(&xtewritebyhuman);
-	break;
-      case 3:     _stateManager->change_state(&xtescrolltext);
+	/*    case 2:     _stateManager->change_state(&xtewritebyhuman);
+      break;
+	  case 3:     _stateManager->change_state(&xtescrolltext);
       break;*/
     }
 }

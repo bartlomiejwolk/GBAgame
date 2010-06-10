@@ -18,10 +18,9 @@ int main() {
   irq_add(II_VBLANK, NULL);
 
   GameEngine game;
-  StateManager stateManager;
+
   Xtewritebyletter xtewritebyletter;
-
-
+  StateManager stateManager;
 
   TitleScreen titleScreen(&stateManager, &xtewritebyletter);
 
