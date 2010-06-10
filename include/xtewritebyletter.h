@@ -2,6 +2,7 @@
 #define XTEWRITEBYLETTER_H
 
 #include "gamestate.h"
+#include <tonc.h>
 
 class Xtewritebyletter: public IGameState {
  public:
@@ -17,7 +18,7 @@ class Xtewritebyletter: public IGameState {
   void Display();
   
  private:
-
+  
 };
 
 
