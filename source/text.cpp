@@ -4,7 +4,8 @@
 extern "C" uint utf8_decode_char(const char *ptr, char **endptr);
 
 Text::Text(const char* text): str((char*)text), tc(tte_get_context()), _textEnd(0), _curFrame(0){ 
-  
+  // by default ch contains "\0" character. If it's not changed then xte_writeby_letter() will think that there is no text to display
+  ch = 1;
 }
 
 // Second constructor (overloaded)

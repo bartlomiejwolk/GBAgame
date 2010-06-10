@@ -2,14 +2,10 @@
 #define XTEWRITEBYLETTER_H
 
 #include "gamestate.h"
-#include "text.h"
-#include "timer.h"
-#include <tonc.h>
 
 class Xtewritebyletter: public IGameState {
  public:
-  Xtewritebyletter();
-  //! Initialize state
+    //! Initialize state
   void Init();
   //! Finish current state
   void CleanUp();
@@ -21,7 +17,7 @@ class Xtewritebyletter: public IGameState {
   void Display();
   
  private:
-  Text _text;
+
 };
 
 
