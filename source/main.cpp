@@ -9,8 +9,10 @@
 #include "titlescreen.h"
 #include "xtewritebyletter.h"
 #include "xtewritedelayed.h"
+#include "xtewritebyhuman.h"
 
 Xtewritedelayed xtewritedelayed;
+Xtewritebyhuman xtewritebyhuman;
 
 int main() {
 

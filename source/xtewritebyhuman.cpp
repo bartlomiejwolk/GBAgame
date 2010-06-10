@@ -1,5 +1,9 @@
 #include "xtewritebyhuman.h"
 
+Xtewritebyhuman::Xtewritebyhuman() {
+
+}
+
 void Xtewritebyhuman::Init(){
 
 }

@@ -5,6 +5,7 @@
 
 class Xtewritebyhuman: public IGameState {
  public:
+  Xtewritebyhuman();
     //! Initialize state
   void Init();
   //! Finish current state

@@ -7,7 +7,7 @@
 #include "statemanager.h"
 #include "xtewritebyletter.h"
 #include "xtewritedelayed.h"
-
+#include "xtewritebyhuman.h"
 
 
 /*! Class derivated from IGameState. */

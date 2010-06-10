@@ -1,6 +1,7 @@
 #include "titlescreen.h"
 
 extern Xtewritedelayed xtewritedelayed;
+extern Xtewritebyhuman xtewritebyhuman;
 
 TitleScreen::TitleScreen(StateManager* state, Xtewritebyletter* xtewritebyletter): _option1("xte_writeby_letter",&_timer1) {
   _stateManager = state;
@@ -38,9 +39,9 @@ void TitleScreen::HandleEvents(){
 	break;
       case 1:     _stateManager->change_state(&xtewritedelayed);
 	break;
-	/*    case 2:     _stateManager->change_state(&xtewritebyhuman);
+    case 2:     _stateManager->change_state(&xtewritebyhuman);
       break;
-	  case 3:     _stateManager->change_state(&xtescrolltext);
+      /*  case 3:     _stateManager->change_state(&xtescrolltext);
       break;*/
     }
 }
