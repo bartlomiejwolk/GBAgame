@@ -9,7 +9,6 @@
 #include "xtewritedelayed.h"
 #include "xtewritebyhuman.h"
 
-
 /*! Class derivated from IGameState. */
 class TitleScreen: public IGameState {
  public:

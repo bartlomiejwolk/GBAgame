@@ -2,6 +2,7 @@
 #define XTEWRITEBYHUMAN_H
 
 #include "gamestate.h"
+#include <tonc.h>
 
 class Xtewritebyhuman: public IGameState {
  public:
