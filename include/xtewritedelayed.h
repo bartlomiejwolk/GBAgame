@@ -5,6 +5,7 @@
 
 class Xtewritedelayed: public IGameState {
  public:
+  Xtewritedelayed();
     //! Initialize state
   void Init();
   //! Finish current state

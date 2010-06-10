@@ -8,6 +8,7 @@
 #include "timer.h"
 #include "titlescreen.h"
 #include "xtewritebyletter.h"
+#include "xtewritedelayed.h"
 
 int main() {
 
@@ -17,6 +18,9 @@ int main() {
   GameEngine game;
   StateManager stateManager;
   Xtewritebyletter xtewritebyletter;
+
+  Xtewritedelayed xtewritedelayed;
+
   TitleScreen titleScreen(&stateManager, &xtewritebyletter);
 
   REG_DISPCNT= DCNT_MODE0 | DCNT_BG0;

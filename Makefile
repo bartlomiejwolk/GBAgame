@@ -5,7 +5,7 @@ EXT	:= gba
 UDIR	:= ~/devkitpro/$(PROJ)
 # list of all .c files to be compiled
 CFILES	:=  
-CPPFILES	:= $(UDIR)/source/main.cpp $(UDIR)/source/gameengine.cpp $(UDIR)/source/gamestate.cpp $(UDIR)/source/statemanager.cpp $(UDIR)/source/text.cpp $(UDIR)/source/timer.cpp $(UDIR)/source/titlescreen.cpp $(UDIR)/source/menu.cpp $(UDIR)/source/xtewritebyletter.cpp $(UDIR)/source/xtewritebyhuman.cpp $(UDIR)/source/xtescrolltext.cpp
+CPPFILES	:= $(UDIR)/source/main.cpp $(UDIR)/source/gameengine.cpp $(UDIR)/source/gamestate.cpp $(UDIR)/source/statemanager.cpp $(UDIR)/source/text.cpp $(UDIR)/source/timer.cpp $(UDIR)/source/titlescreen.cpp $(UDIR)/source/menu.cpp $(UDIR)/source/xtewritebyletter.cpp $(UDIR)/source/xtewritebyhuman.cpp $(UDIR)/source/xtescrolltext.cpp $(UDIR)/source/xtewritedelayed.cpp
 # List of object files. Every .c file will become object file
 COBJS	:= $(CFILES:.c=.o) 
 CPPOBJS	:= $(CPPFILES:.cpp=.o)

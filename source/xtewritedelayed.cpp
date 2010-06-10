@@ -1,5 +1,9 @@
 #include "xtewritedelayed.h"
 
+Xtewritedelayed::Xtewritedelayed(){
+
+}
+
 void Xtewritedelayed::Init(){
 
 }
