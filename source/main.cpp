@@ -13,18 +13,15 @@
 
 Xtewritedelayed xtewritedelayed;
 Xtewritebyhuman xtewritebyhuman;
+GameEngine game;
+Xtewritebyletter xtewritebyletter;
+StateManager stateManager;
+TitleScreen titleScreen(&stateManager, &xtewritebyletter);
 
 int main() {
 
   irq_init(NULL);
   irq_add(II_VBLANK, NULL);
-
-  GameEngine game;
-
-  Xtewritebyletter xtewritebyletter;
-  StateManager stateManager;
-
-  TitleScreen titleScreen(&stateManager, &xtewritebyletter);
 
   REG_DISPCNT= DCNT_MODE0 | DCNT_BG0;
   

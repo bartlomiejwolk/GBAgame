@@ -4,6 +4,8 @@
 #include "gamestate.h"
 #include "text.h"
 #include "tonc.h"
+#include "statemanager.h"
+#include "titlescreen.h"
 
 class Xtewritebyhuman: public IGameState {
  public:
