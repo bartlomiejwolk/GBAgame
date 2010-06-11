@@ -26,6 +26,4 @@ class Xtewritebyhuman: public IGameState {
   Text* _text;
 };
 
-
-
 #endif

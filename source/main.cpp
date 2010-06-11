@@ -10,12 +10,14 @@
 #include "xtewritebyletter.h"
 #include "xtewritedelayed.h"
 #include "xtewritebyhuman.h"
+#include "xtescrolltext.h"
 
 Xtewritedelayed xtewritedelayed;
 Xtewritebyhuman xtewritebyhuman;
 GameEngine game;
 Xtewritebyletter xtewritebyletter;
 StateManager stateManager;
+Xtescrolltext xtescrolltext;
 TitleScreen titleScreen(&stateManager, &xtewritebyletter);
 
 int main() {

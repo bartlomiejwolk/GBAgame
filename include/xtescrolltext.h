@@ -2,9 +2,13 @@
 #define XTESCROLLTEXT_H
 
 #include "gamestate.h"
+#include "text.h"
+#include "timer.h"
+
 
 class Xtescrolltext: public IGameState {
  public:
+  Xtescrolltext();
     //! Initialize state
   void Init();
   //! Finish current state
@@ -17,7 +21,8 @@ class Xtescrolltext: public IGameState {
   void Display();
   
  private:
-
+  Timer* _timer;
+  Text* _text;
 };
 
 
