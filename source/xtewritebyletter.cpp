@@ -14,8 +14,7 @@ void Xtewritebyletter::Init(){
   _text->str = _text->firstChar;
 
   // clear screen
-  tte_write("#{er:0,0,239,159}");
-  tte_write("#{P;}");
+  tte_write("#{er:0,0,239,159;Pr}");
 }
 
 void Xtewritebyletter::CleanUp(){
