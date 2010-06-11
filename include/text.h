@@ -57,7 +57,6 @@ class Text {
   void  clear_line();
 
  private:
-  char *str; 
   TTC *tc;
   uint ch, gid;
   TFont *font;
@@ -74,5 +73,9 @@ class Text {
     xte_writeby_human()
    */
   Timer* _ptimer;
+  
+ public:
+  char *str; 
+  char *firstChar;
 };
 #endif

@@ -9,7 +9,9 @@ Xtewritebyhuman::Xtewritebyhuman() {
 }
 
 void Xtewritebyhuman::Init(){
-  //    tte_write("#{er:0,0,259,159;Pr}xtewritebyhuman");
+  // reset str pointer to 0
+  _text->str = _text->firstChar;
+
   tte_write("#{er:0,0,249,159;Pr}");
 
 }
