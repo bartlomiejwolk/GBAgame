@@ -2,7 +2,8 @@
 #define XTEWRITEBYHUMAN_H
 
 #include "gamestate.h"
-#include <tonc.h>
+#include "text.h"
+#include "tonc.h"
 
 class Xtewritebyhuman: public IGameState {
  public:
@@ -19,7 +20,8 @@ class Xtewritebyhuman: public IGameState {
   void Display();
   
  private:
-
+  Timer* _timer;
+  Text* _text;
 };
 
 
