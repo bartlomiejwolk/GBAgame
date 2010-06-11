@@ -21,7 +21,7 @@ class Xtewritebyletter: public IGameState {
   void Display();
   
  private:
-  Text _text;
+  Text* _text;
 };
 
 

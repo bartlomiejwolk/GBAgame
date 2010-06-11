@@ -1,4 +1,9 @@
 #include "xtewritedelayed.h"
+#include "statemanager.h"
+#include "titlescreen.h"
+
+extern StateManager stateManager;
+extern TitleScreen titleScreen;
 
 Xtewritedelayed::Xtewritedelayed(){
   _timer = new Timer;
@@ -6,6 +11,10 @@ Xtewritedelayed::Xtewritedelayed(){
 }
 
 void Xtewritedelayed::Init(){
+  // reset str pointer to 0
+  _text->str = _text->firstChar;
+  
+  // erase screen and reset cursor
   tte_write("#{er:0,0,259,159;}#{Pr}");
 }
 
@@ -14,7 +23,8 @@ void Xtewritedelayed::CleanUp(){
 }
 
 void Xtewritedelayed::HandleEvents(){
-
+    if(key_hit(KEY_B))
+    stateManager.change_state(&titleScreen);
 }
 
 void Xtewritedelayed::Update(){

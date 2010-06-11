@@ -12,7 +12,7 @@ void TitleScreen::Init(){
   // show menu <<Init() will be called by StateManager::change_state()>>
   //  _option1.xte_scroll_text();
   
-  tte_write("#{er:0,0,249,159;X:16;}xte_writeby_letter\nxte_write_delayed\nxte_writeby_human\nxte_scroll_text");
+  tte_write("#{er:0,0,249,159;X:16;Pr}xte_writeby_letter\nxte_write_delayed\nxte_writeby_human\nxte_scroll_text");
 }
 
 void TitleScreen::CleanUp(){
@@ -35,10 +35,10 @@ void TitleScreen::HandleEvents(){
 
   if (key_hit(KEY_A))
     switch (menuIndex) {
-      case 0:     _stateManager->change_state(_xtewritebyletter);
-	break;
-      case 1:     _stateManager->change_state(&xtewritedelayed);
-	break;
+    case 0:     _stateManager->change_state(_xtewritebyletter);
+      break;
+    case 1:     _stateManager->change_state(&xtewritedelayed);
+      break;
     case 2:     _stateManager->change_state(&xtewritebyhuman);
       break;
       /*  case 3:     _stateManager->change_state(&xtescrolltext);
