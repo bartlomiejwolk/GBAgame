@@ -63,8 +63,6 @@ class Text {
   //! Is set to 1 by instruction inside switch after last char is displayed.
   int _textEnd;
   int _curFrame;
-  // screen position
-  int y;
 
   //! Pointer for Timer obj. given by constructor
   /*!
@@ -77,5 +75,7 @@ class Text {
  public:
   char *str; 
   char *firstChar;
+  int y;   // screen position
+
 };
 #endif

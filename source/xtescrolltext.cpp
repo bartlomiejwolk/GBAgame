@@ -14,6 +14,9 @@ void Xtescrolltext::Init(){
   // reset str pointer to 0
   _text->str = _text->firstChar;
 
+  // reset BG position
+  _text->y = 11*8;
+
   // clear screen and reset cursor position
   tte_write("#{er:0,0,249,159;Pr}");
 

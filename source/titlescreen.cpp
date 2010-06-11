@@ -11,9 +11,8 @@ TitleScreen::TitleScreen(StateManager* state, Xtewritebyletter* xtewritebyletter
 }
 
 void TitleScreen::Init(){
-  // show menu <<Init() will be called by StateManager::change_state()>>
-  //  _option1.xte_scroll_text();
-  
+  REG_BG0VOFS = 0;
+
   tte_write("#{er:0,0,249,159;X:16;Pr}xte_writeby_letter\nxte_write_delayed\nxte_writeby_human\nxte_scroll_text");
 }
 
