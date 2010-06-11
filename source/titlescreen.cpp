@@ -13,7 +13,7 @@ TitleScreen::TitleScreen(StateManager* state, Xtewritebyletter* xtewritebyletter
 void TitleScreen::Init(){
   REG_BG0VOFS = 0;
 
-  tte_write("#{er:0,0,249,159;X:16;Pr}xte_writeby_letter\nxte_write_delayed\nxte_writeby_human\nxte_scroll_text");
+  tte_write("#{er:0,0,249,159;X:16;Pr}1) xte_writeby_letter\n2) xte_write_delayed\n3) xte_writeby_human\n4) xte_scroll_text");
 }
 
 void TitleScreen::CleanUp(){
@@ -45,6 +45,12 @@ void TitleScreen::HandleEvents(){
     case 3:     _stateManager->change_state(&xtescrolltext);
       break;
     }
+
+  char opt[1];
+  sprintf(opt,"%d",menuIndex);
+  
+  tte_write("#{P:0,48}Current: ");
+  tte_write(opt);
 }
 
 void TitleScreen::Update(){
