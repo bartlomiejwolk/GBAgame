@@ -13,7 +13,7 @@ TitleScreen::TitleScreen(StateManager* state, Xtewritebyletter* xtewritebyletter
 void TitleScreen::Init(){
   REG_BG0VOFS = 0;
 
-  tte_write("#{er:0,0,249,159;X:16;Pr}xte_writeby_letter\nxte_write_delayed\nxte_writeby_human\nxte_scroll_text");
+  tte_write("#{er:0,0,249,159;X:16;Pr}  xte_writeby_letter\nxte_write_delayed\nxte_writeby_human\nxte_scroll_text");
 }
 
 void TitleScreen::CleanUp(){
@@ -21,10 +21,6 @@ void TitleScreen::CleanUp(){
 }
 
 void TitleScreen::HandleEvents(){
-  // if button a then changestate to xte_scroll_text()
-  /*  if (key_hit(KEY_A))
-      _stateManager->change_state(_xtewritebyletter);*/
-
   // moving through the menu
   if (key_hit(KEY_DOWN))
     if (menuIndex != 3)
@@ -43,6 +39,18 @@ void TitleScreen::HandleEvents(){
     case 2:     _stateManager->change_state(&xtewritebyhuman);
       break;
     case 3:     _stateManager->change_state(&xtescrolltext);
+      break;
+    }
+
+  if (key_hit(KEY_ANY))
+    switch (menuIndex) {
+    case 0: tte_write("#{P;es}  xte_writeby_letter\nxte_write_delayed\nxte_writeby_human\nxte_scroll_text");
+      break;
+    case 1: tte_write("#{P;es}xte_writeby_letter\n  xte_write_delayed\nxte_writeby_human\nxte_scroll_text");
+      break;
+    case 2: tte_write("#{P;es}xte_writeby_letter\nxte_write_delayed\n  xte_writeby_human\nxte_scroll_text");
+      break;
+    case 3: tte_write("#{P;es}xte_writeby_letter\nxte_write_delayed\nxte_writeby_human\n  xte_scroll_text");
       break;
     }
 }
