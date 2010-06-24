@@ -30,18 +30,6 @@ void TitleScreen::HandleEvents(){
     if (menuIndex != 0)
       menuIndex--;
 
-  if (key_hit(KEY_A))
-    switch (menuIndex) {
-    case 0:     _stateManager->change_state(_xtewritebyletter);
-      break;
-    case 1:     _stateManager->change_state(&xtewritedelayed);
-      break;
-    case 2:     _stateManager->change_state(&xtewritebyhuman);
-      break;
-    case 3:     _stateManager->change_state(&xtescrolltext);
-      break;
-    }
-
   if (key_hit(KEY_ANY))
     switch (menuIndex) {
     case 0: tte_write("#{P;es}  xte_writeby_letter\nxte_write_delayed\nxte_writeby_human\nxte_scroll_text");
@@ -51,6 +39,18 @@ void TitleScreen::HandleEvents(){
     case 2: tte_write("#{P;es}xte_writeby_letter\nxte_write_delayed\n  xte_writeby_human\nxte_scroll_text");
       break;
     case 3: tte_write("#{P;es}xte_writeby_letter\nxte_write_delayed\nxte_writeby_human\n  xte_scroll_text");
+      break;
+    }
+
+  if (key_hit(KEY_A))
+    switch (menuIndex) {
+    case 0:     _stateManager->change_state(_xtewritebyletter);
+      break;
+    case 1:     _stateManager->change_state(&xtewritedelayed);
+      break;
+    case 2:     _stateManager->change_state(&xtewritebyhuman);
+      break;
+    case 3:     _stateManager->change_state(&xtescrolltext);
       break;
     }
 }
